@@ -1,77 +1,80 @@
-/* Ensure the body layout remains centered */
+/* Hiding scrollbars on all browsers */
 body {
-    background-color: black;
-    color: white;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #ababab;
     margin: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Center content style */
-.center-content {
-    font-size: 40px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
-    word-spacing: -12px;
-    position: relative; /* Set relative to make it a reference for positioning */
-    z-index: 1;
-    
-}
-
-/* Projects title that will appear close to center-content */
-.projects-title {
-    font-size: 20px;
-    letter-spacing: 8px;
-    font-weight: bolder;
-    font-style: italic;
-    position: absolute; /* Position relative to .center-content */
-    top: 46.3%;  /* Place it directly below center-content */
-    left: 50%;  /* Align it horizontally to the center */
-    transform: translate(-50%, -30%); /* Move it up slightly for almost overlapping */
-    z-index: 1;
-}
-
-/* Projects section will remain below without excessive margin */
-.projects {
-    font-size: 16px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
    
+
+
 }
 
-/* Blinking dot style */
-.blink {
-    animation: blink-animation 1s steps(2, start) infinite;
+/* Ensures the container fits all screens */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; /* Hide scrollbars in all divs with overflowing content */
+    padding-top: 10px;
 }
-  
-@keyframes blink-animation {
-    to {
-        visibility: hidden;
+
+h2 {
+    text-align: center;
+    font-size: 12px;
+    border-radius: 12px;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #2c2c2c; /* Darker background for cards */
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: space-between; /* Push button to the bottom */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
+    flex-grow: 1; /* Allow image to take available space */
+}
+
+.project-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #7C0000; /* Even darker red for button */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.project-button:hover {
+    background-color: #600000; /* Darker red on hover */
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 1024px) {
+    .projects {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
     }
 }
 
-/* Basic link style */
-a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Link hover effect */
-a:hover {
-    color: rgb(141, 2, 2);
-}
-
-/* Active link style */
-a:active {
-    color: rgb(121, 0, 0);
-}
-
-/* Responsive link */
-@media (max-width: 600px) {
-    a {
-        font-size: 1.2em;
+@media (max-width: 768px) {
+    .projects {
+        grid-template-columns: 1fr; /* One column for smaller screens */
     }
 }
