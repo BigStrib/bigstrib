@@ -44,6 +44,7 @@ h2 {
 
 .project-card:hover {
     transform: translateY(-5px);
+    opacity: 80%;
 }
 
 .project-card img {
