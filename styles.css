@@ -1,7 +1,7 @@
 /* Hiding scrollbars on all browsers */
 body {
     font-family: Arial, sans-serif;
-    background-color: #1e1e1e;
+    background: linear-gradient(to bottom, #000000, #1d1d1d); /* Black to grey gradient */
     color: #ababab;
     margin: 0;
    
