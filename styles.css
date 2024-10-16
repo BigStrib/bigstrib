@@ -48,12 +48,7 @@ h2 {
     display: flex;
     flex-direction: column; /* Stack elements vertically */
     justify-content: space-between; /* Push button to the bottom */
-}
-
-/* Card hover effects */
-.project-card:hover {
-    transform: translateY(-3px);
-    opacity: 85%; /* Slightly less opacity change */
+    cursor: pointer; /* Indicate that the card is clickable */
 }
 
 /* Image styles within project cards */
@@ -62,16 +57,29 @@ h2 {
     border-radius: 8px; /* Smaller radius for images */
     flex-grow: 1; /* Allow image to take available space */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); /* Subtle image shadow */
+    transition: transform 0.3s ease; /* Add transition for animation */
 }
 
+/* Image hover effect */
+.project-card:hover img {
+    transform: scale(1.05); /* Scale up the image on hover */
+}
+
+/* Card hover effects */
+.project-card:hover {
+    transform: translateY(-3px);
+    opacity: 85%; /* Slightly less opacity change */
+}
 
 /* Project title styles */
-.project-card h3 {
+.project-card h2 {
     font-size: 16px; /* Smaller title font */
-    color: #ff4444; /* Red title color */
-    margin-bottom: 0; /* No space below the title */
+    color: #ababab; /* Red title color */
+    margin-bottom: 4px; /* No space below the title */
+    margin-top:4px;
     font-weight: bold;
     text-transform: uppercase; /* Make the title stand out */
+
 }
 
 /* Project description styles */
@@ -85,7 +93,6 @@ h2 {
     border-radius: 6px 6px 0px 0px; /* Smaller radius for the description */
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15); /* Subtle inner shadow */
     transition: background-color 0.3s ease; /* Smooth background transition */
-    
 }
 
 /* Project button styles */
@@ -98,9 +105,9 @@ h2 {
     text-decoration: none;
     border-radius: 0px 0px 4px 4px; /* Smaller button radius */
     transition: background-color 0.3s;
-    
 }
 
+/* Button hover effect */
 .project-button:hover {
     background-color: #600000; /* Darker red on hover */
 }
